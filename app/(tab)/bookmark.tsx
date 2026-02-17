@@ -1,15 +1,15 @@
 import { View , Text} from "react-native";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 export default function Bookmark() {
     return (
-        <View
-        style={{
-          flex: 1,
+      <SafeAreaView>
+        <View style={{
+          flexDirection: "row",
           justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
+        }}>
         <Text>Bookmark</Text>
       </View>
+      </SafeAreaView>
     )
 }

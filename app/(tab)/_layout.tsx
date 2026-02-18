@@ -5,23 +5,29 @@ import { Tabs } from "expo-router";
 
 export default function _Layout(){
     return (
-        <Tabs>
+        <Tabs screenOptions={
+            {
+            // Color of active tab label/icon
+            tabBarActiveTintColor: '#0000ff90', 
+             // tabBarInactiveTintColor: '#CCCCCC'
+            }
+        }>
             <Tabs.Screen 
             name="home"
             options={{
                 title: "Home",
                 headerShown: false,
                 tabBarIcon: ({color, size}) => (
-                    <AntDesign name="home" size={size} color={color}></AntDesign>
+                    <MaterialIcons name="home" size={size} color={color}></MaterialIcons>
                 )
             }}/>
             <Tabs.Screen 
-            name="movies"
+            name="search"
             options={{
-                title: "Movies",
+                title: "Search",
                 headerShown: false,
                 tabBarIcon: ({color, size}) => (
-                    <MaterialIcons name="movie" size={size} color={color} />
+                    <MaterialIcons name="search" size={size} color={color} />
                 )
             }}/>
             <Tabs.Screen 
@@ -35,9 +41,9 @@ export default function _Layout(){
             }}/>
 
             <Tabs.Screen 
-            name="bookmark"
+            name="watchLater"
             options={{
-                title: "Bookmark",
+                title: "Watch Later",
                 headerShown: false,
                 tabBarIcon: ({color, size}) => (
                     <MaterialIcons name="bookmark" size={size} color={color}></MaterialIcons>

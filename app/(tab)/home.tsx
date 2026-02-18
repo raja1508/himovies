@@ -7,11 +7,13 @@ import useFetch from "@/useFetch";
 import { fetchMovies } from "@/fetcher";
 import { Movie } from "@/types";
 import { useState } from "react";
+import { useRouter } from "expo-router";
 
 export default function Home() {
   const {data, error, loading, fetch} = useFetch<Movie[]>(() => fetchMovies({query: ""}), true);
   // const [searchTerm, setSearchTerm] = useState(); 
   // console.log(loading);
+  const router = useRouter()
 
 
 
@@ -45,11 +47,13 @@ export default function Home() {
           }}>
               <Text style={{
                 color: '#0000ff90',
-                fontSize: 18
+                fontSize: 24,
+                fontWeight: 600
               }}>Hi</Text>
               <Text style={{
                 color: '#ff000090',
-                fontSize: 18
+                fontSize: 24,
+                fontWeight: 600
               }}>Movies</Text>
           </View>
 
@@ -72,7 +76,9 @@ export default function Home() {
                 borderRadius: 20,
                 paddingVertical: 8,
                 marginTop: 4
-              }}></TextInput>
+              }}
+              onFocus={() => router.push("/(tab)/search")}
+              ></TextInput>
 
           </View>
         </View>
